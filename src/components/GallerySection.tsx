@@ -159,7 +159,7 @@ export default function GallerySection() {
                 ← Home
               </Link>
             </div>
-            <span className="section-number" style={{ color: "oklch(0.72 0.12 75)" }}>04  Gallery</span>
+            <span className="section-number" style={{ color: "oklch(0.72 0.12 75)" }}>04 · Gallery</span>
             <h2
               className="font-['Cormorant_Garamond'] text-white mt-3 leading-tight"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 400 }}

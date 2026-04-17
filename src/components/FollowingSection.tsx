@@ -65,7 +65,7 @@ function StatCard({ platform, index, visible }: { platform: typeof platforms[0];
       </div>
 
       <div
-        className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl font-600 text-foreground mb-1 group-hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300"
+        className="font-['Cormorant_Garamond'] text-5xl lg:text-6xl font-semibold text-foreground mb-1 group-hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300"
       >
         {platform.display}
       </div>
@@ -110,7 +110,7 @@ export default function FollowingSection() {
         <div
           className={`mb-16 lg:mb-20 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
-          <span className="section-number">03  Following</span>
+          <span className="section-number">03 · Following</span>
           <h2
             className="font-['Cormorant_Garamond'] text-foreground mt-3 leading-tight"
             style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 400 }}
@@ -120,7 +120,7 @@ export default function FollowingSection() {
             <em>Gang</em>
           </h2>
           <p className="font-['Outfit'] text-foreground/50 text-sm mt-4 max-w-md leading-relaxed">
-            A community of over 2.5 million across platforms  built on authentic content, real stories, and genuine connection.
+            A community of over 2.5 million across platforms, built on authentic content, real stories, and genuine connection.
           </p>
         </div>
 

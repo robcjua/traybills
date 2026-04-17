@@ -34,7 +34,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 min-h-screen flex flex-col justify-end pb-20 lg:pb-28 px-6 lg:px-16 xl:px-24 max-w-7xl mx-auto">
         <div className="mb-4 lg:mb-6">
-          <span className="font-['Outfit'] text-xs tracking-[0.3em] uppercase text-[oklch(0.72_0.12_75)] font-500">
+          <span className="font-['Outfit'] text-xs tracking-[0.3em] uppercase text-[oklch(0.72_0.12_75)] font-medium">
             Atlanta, Georgia
           </span>
         </div>
@@ -52,20 +52,20 @@ export default function HeroSection() {
           Bills
         </h1>
 
-        <p className="font-['Outfit'] text-white/70 text-sm lg:text-base tracking-[0.2em] uppercase mb-10 lg:mb-12 max-w-md font-300">
+        <p className="font-['Outfit'] text-white/70 text-sm lg:text-base tracking-[0.2em] uppercase mb-10 lg:mb-12 max-w-md font-light">
           Music Artist · Content Creator · Fashion Influencer
         </p>
 
         <div className="flex flex-wrap items-center gap-4">
           <a
             href="#about"
-            className="font-['Outfit'] text-xs tracking-[0.15em] uppercase bg-white text-black px-8 py-3.5 hover:bg-[oklch(0.72_0.12_75)] hover:text-white transition-all duration-300 font-500"
+            className="font-['Outfit'] text-xs tracking-[0.15em] uppercase bg-white text-black px-8 py-3.5 hover:bg-[oklch(0.72_0.12_75)] hover:text-white transition-all duration-300 font-medium"
           >
             Discover
           </a>
           <a
             href="/music"
-            className="font-['Outfit'] text-xs tracking-[0.15em] uppercase border border-white/40 text-white px-8 py-3.5 hover:border-[oklch(0.72_0.12_75)] hover:text-[oklch(0.72_0.12_75)] transition-all duration-300 font-500"
+            className="font-['Outfit'] text-xs tracking-[0.15em] uppercase border border-white/40 text-white px-8 py-3.5 hover:border-[oklch(0.72_0.12_75)] hover:text-[oklch(0.72_0.12_75)] transition-all duration-300 font-medium"
           >
             Latest Music
           </a>

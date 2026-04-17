@@ -27,7 +27,7 @@ export default function AboutSection() {
             className={`lg:col-span-3 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <div className="mb-6">
-              <span className="section-number">01  About</span>
+              <span className="section-number">01 · About</span>
             </div>
 
             <h2
@@ -41,8 +41,8 @@ export default function AboutSection() {
 
             <div className="space-y-6 font-['Outfit'] text-foreground/70 leading-relaxed text-[15px] lg:text-base">
               <p>
-                Born in Atlanta, Georgia, Tray Bills  known to his fans as{" "}
-                <strong className="text-foreground font-medium">BILLY</strong>  grew up in a neighborhood
+                Born in Atlanta, Georgia, Tray Bills, known to his fans as{" "}
+                <strong className="text-foreground font-medium">BILLY</strong>, grew up in a neighborhood
                 deeply shaped by hip-hop culture. The streets, the sounds, and the stories of Atlanta became
                 the foundation of everything he creates.
               </p>
@@ -53,7 +53,7 @@ export default function AboutSection() {
               </p>
               <p>
                 Today, Tray leads the{" "}
-                <strong className="text-foreground font-medium">Billionaire Gang</strong>  a community of
+                <strong className="text-foreground font-medium">Billionaire Gang</strong>, a community of
                 over <strong className="text-foreground font-medium">2.5 million followers</strong> across
                 platforms who connect with his authentic storytelling about real friendship, devoted love,
                 and street romance. He's a NovaMEN brand ambassador, SXSW contributor, and one of Atlanta's
@@ -81,7 +81,7 @@ export default function AboutSection() {
               <div className="absolute -top-3 -right-3 w-full h-full border border-[oklch(0.72_0.12_75)]/25" />
               <img
                 src={PORTRAIT}
-                alt="Tray Bills  recent press photo"
+                alt="Tray Bills, recent press photo"
                 className="relative w-full object-cover"
                 style={{ aspectRatio: "3/4", zIndex: 1 }}
               />
