@@ -38,18 +38,18 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled || !isHome
-          ? isGalleryPage
-            ? "bg-[#111111]/95 backdrop-blur-sm shadow-sm border-b border-white/5"
-            : "bg-white/95 backdrop-blur-sm shadow-sm border-b border-black/5"
-          : "bg-transparent"
+        isGalleryPage
+          ? "bg-[#111111]/95 backdrop-blur-sm shadow-sm border-b border-white/10"
+          : scrolled || !isHome
+            ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-black/5"
+            : "bg-black/60 backdrop-blur-md border-b border-white/10"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
         <Link
           to="/"
           className={`font-['Cormorant_Garamond'] text-xl lg:text-2xl font-semibold tracking-widest hover:opacity-70 transition-opacity ${
-            isGalleryPage ? "text-white" : "text-foreground"
+            isGalleryPage || (isHome && !scrolled) ? "text-white" : "text-foreground"
           }`}
         >
           BILLY
@@ -57,8 +57,9 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
+            const onDark = isGalleryPage || (isHome && !scrolled);
             const className = `font-['Outfit'] text-xs font-medium tracking-[0.15em] uppercase transition-colors relative group ${
-              isGalleryPage ? "text-white/60 hover:text-white" : "text-foreground/70 hover:text-foreground"
+              onDark ? "text-white/80 hover:text-white" : "text-foreground/70 hover:text-foreground"
             } ${
               (link.href === "/gallery" && location === "/gallery") ||
               (link.href === "/music" && location === "/music")
@@ -81,25 +82,39 @@ export default function Navbar() {
               </a>
             );
           })}
-          <a
-            href="https://linktr.ee/Traybills"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-['Outfit'] text-xs font-semibold tracking-[0.15em] uppercase bg-foreground text-background px-5 py-2.5 hover:bg-[oklch(0.72_0.12_75)] hover:text-white transition-all duration-300"
-          >
-            Connect
-          </a>
+          {(() => {
+            const onDark = isGalleryPage || (isHome && !scrolled);
+            return (
+              <a
+                href="https://linktr.ee/Traybills"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`font-['Outfit'] text-xs font-semibold tracking-[0.15em] uppercase px-5 py-2.5 transition-all duration-300 ${
+                  onDark
+                    ? "bg-white text-black hover:bg-[oklch(0.72_0.12_75)] hover:text-white"
+                    : "bg-foreground text-background hover:bg-[oklch(0.72_0.12_75)] hover:text-white"
+                }`}
+              >
+                Connect
+              </a>
+            );
+          })()}
         </div>
 
-        <button
-          className={`lg:hidden flex flex-col gap-1.5 p-2 ${isGalleryPage ? "text-white" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span className={`block w-6 h-px transition-all duration-300 ${isGalleryPage ? "bg-white" : "bg-foreground"} ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-px transition-all duration-300 ${isGalleryPage ? "bg-white" : "bg-foreground"} ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-px transition-all duration-300 ${isGalleryPage ? "bg-white" : "bg-foreground"} ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-        </button>
+        {(() => {
+          const onDark = isGalleryPage || (isHome && !scrolled);
+          return (
+            <button
+              className={`lg:hidden flex flex-col gap-1.5 p-2 ${onDark ? "text-white" : ""}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span className={`block w-6 h-px transition-all duration-300 ${onDark ? "bg-white" : "bg-foreground"} ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+              <span className={`block w-6 h-px transition-all duration-300 ${onDark ? "bg-white" : "bg-foreground"} ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-6 h-px transition-all duration-300 ${onDark ? "bg-white" : "bg-foreground"} ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            </button>
+          );
+        })()}
       </div>
 
       <div
