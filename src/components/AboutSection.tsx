@@ -72,21 +72,6 @@ export default function AboutSection() {
               ))}
             </div>
 
-            <div className="mt-12 grid grid-cols-2 gap-6 border-t border-black/[0.07] pt-8">
-              {[
-                { value: "2013", label: "Started" },
-                { value: "ATL", label: "Based In" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="font-['Cormorant_Garamond'] text-3xl font-semibold text-foreground">
-                    {stat.value}
-                  </div>
-                  <div className="font-['Outfit'] text-[10px] tracking-[0.2em] uppercase text-foreground/40 mt-1">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           <div

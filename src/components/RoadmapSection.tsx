@@ -1,5 +1,6 @@
-/* RoadmapSection  Career timeline with editorial styling */
+/* RoadmapSection  Career timeline with scroll-driven roadmap animation */
 import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 
 const milestones = [
   {
@@ -52,13 +53,75 @@ const milestones = [
   },
 ];
 
+function MilestoneRow({ milestone, index }: { milestone: typeof milestones[number]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-15% 0px -15% 0px" });
+  const isLeft = index % 2 === 0;
+
+  return (
+    <div
+      ref={ref}
+      className="relative grid lg:grid-cols-2 gap-0"
+    >
+      <motion.div
+        initial={{ opacity: 0, x: isLeft ? -40 : 40, y: 20 }}
+        animate={inView ? { opacity: 1, x: 0, y: 0 } : {}}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className={`pb-12 lg:pb-16 ${
+          isLeft ? "lg:pr-16 lg:text-right" : "lg:col-start-2 lg:pl-16"
+        }`}
+      >
+        <div className="pl-8 lg:pl-0">
+          <div className="font-['Cormorant_Garamond'] text-[oklch(0.72_0.12_75)] text-4xl font-300 mb-2">
+            {milestone.year}
+          </div>
+          <h3 className="font-['Outfit'] text-white text-base font-500 tracking-wide mb-3">
+            {milestone.title}
+          </h3>
+          <p className="font-['Outfit'] text-white/50 text-sm leading-relaxed max-w-sm lg:max-w-none">
+            {milestone.description}
+          </p>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={inView ? { scale: 1, opacity: 1 } : {}}
+        transition={{ duration: 0.5, delay: 0.2, ease: "backOut" }}
+        className="absolute left-0 lg:left-1/2 top-2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[oklch(0.72_0.12_75)] bg-[#111111]"
+      >
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={inView ? { scale: 1 } : {}}
+          transition={{ duration: 0.4, delay: 0.5 }}
+          className="absolute inset-1 rounded-full bg-[oklch(0.72_0.12_75)]"
+        />
+        <motion.div
+          initial={{ scale: 0, opacity: 0.6 }}
+          animate={inView ? { scale: 2.5, opacity: 0 } : {}}
+          transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
+          className="absolute inset-0 rounded-full bg-[oklch(0.72_0.12_75)]"
+        />
+      </motion.div>
+    </div>
+  );
+}
+
 export default function RoadmapSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const [headingVisible, setHeadingVisible] = useState(false);
+
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 80%", "end 20%"],
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      ([entry]) => { if (entry.isIntersecting) setHeadingVisible(true); },
       { threshold: 0.1 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
@@ -73,7 +136,7 @@ export default function RoadmapSection() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-16 xl:px-24">
         <div
-          className={`mb-16 lg:mb-20 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+          className={`mb-16 lg:mb-20 transition-all duration-700 ${headingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
           <span className="section-number text-[oklch(0.72_0.12_75)]">02  Journey</span>
           <h2
@@ -86,42 +149,18 @@ export default function RoadmapSection() {
           </h2>
         </div>
 
-        <div className="relative">
+        <div ref={timelineRef} className="relative">
+          {/* Track (faint) */}
           <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-px bg-white/10 lg:-translate-x-px" />
+          {/* Progress line (gold) */}
+          <motion.div
+            style={{ height: lineHeight }}
+            className="absolute left-0 lg:left-1/2 top-0 w-px bg-gradient-to-b from-[oklch(0.72_0.12_75)] via-[oklch(0.72_0.12_75)] to-[oklch(0.72_0.12_75)]/40 lg:-translate-x-px shadow-[0_0_8px_oklch(0.72_0.12_75_/_0.6)]"
+          />
 
           <div className="space-y-0">
             {milestones.map((milestone, index) => (
-              <div
-                key={milestone.year}
-                className={`relative grid lg:grid-cols-2 gap-0 transition-all duration-700 ${
-                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
-              >
-                <div
-                  className={`pb-12 lg:pb-16 ${
-                    index % 2 === 0
-                      ? "lg:pr-16 lg:text-right"
-                      : "lg:col-start-2 lg:pl-16"
-                  }`}
-                >
-                  <div className="pl-8 lg:pl-0">
-                    <div className="font-['Cormorant_Garamond'] text-[oklch(0.72_0.12_75)] text-4xl font-300 mb-2">
-                      {milestone.year}
-                    </div>
-                    <h3 className="font-['Outfit'] text-white text-base font-500 tracking-wide mb-3">
-                      {milestone.title}
-                    </h3>
-                    <p className="font-['Outfit'] text-white/50 text-sm leading-relaxed max-w-sm lg:max-w-none">
-                      {milestone.description}
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  className={`absolute left-0 lg:left-1/2 top-2 -translate-x-1/2 w-3 h-3 rounded-full border-2 border-[oklch(0.72_0.12_75)] bg-[#111111] transition-all duration-300 hover:bg-[oklch(0.72_0.12_75)]`}
-                />
-              </div>
+              <MilestoneRow key={milestone.year} milestone={milestone} index={index} />
             ))}
           </div>
         </div>
