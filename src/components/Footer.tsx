@@ -9,8 +9,19 @@ export default function Footer() {
           BILLY
         </div>
 
-        <div className="font-['Outfit'] text-white/20 text-xs tracking-[0.15em] text-center">
-          © {currentYear} Tray Bills. Atlanta, Georgia.
+        <div className="font-['Outfit'] text-white/20 text-xs tracking-[0.15em] text-center flex flex-col gap-1">
+          <span>© {currentYear} Tray Bills. Atlanta, Georgia.</span>
+          <span>
+            Powered by{" "}
+            <a
+              href="https://synapse.adovadigital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-[oklch(0.72_0.12_75)] transition-colors"
+            >
+              Adova Synapse
+            </a>
+          </span>
         </div>
 
         <div className="flex items-center gap-6">
