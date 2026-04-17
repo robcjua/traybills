@@ -13,7 +13,7 @@ const milestones = [
     year: "2017",
     title: "Chris & Tray",
     description:
-      "Launched the collaborative YouTube channel with Chris Gilly  originally 'Clout of Atlanta', now 'Chris And Tray'  which grew to 755K+ subscribers.",
+      "Launched the collaborative YouTube channel with Chris Gilly, originally 'Clout of Atlanta', now 'Chris And Tray', which grew to 755K+ subscribers.",
   },
   {
     year: "2018",
@@ -34,7 +34,7 @@ const milestones = [
       "Dropped 'The Leak' EP featuring 'In My Bag' ft. Chris Gilly & Miita 6. Featured in Fashion Gxd Magazine Summer 2020 Issue as a rising star.",
   },
   {
-    year: "202122",
+    year: "2021–22",
     title: "Building the Brand",
     description:
       "Released 'UH OH' ft. Juno Central and 'We Wylin' (official music video). Became a NovaMEN brand ambassador, cementing his fashion influence.",
@@ -72,10 +72,10 @@ function MilestoneRow({ milestone, index }: { milestone: typeof milestones[numbe
         }`}
       >
         <div className="pl-8 lg:pl-0">
-          <div className="font-['Cormorant_Garamond'] text-[oklch(0.72_0.12_75)] text-4xl font-300 mb-2">
+          <div className="font-['Cormorant_Garamond'] text-[oklch(0.72_0.12_75)] text-4xl font-light mb-2">
             {milestone.year}
           </div>
-          <h3 className="font-['Outfit'] text-white text-base font-500 tracking-wide mb-3">
+          <h3 className="font-['Outfit'] text-white text-base font-medium tracking-wide mb-3">
             {milestone.title}
           </h3>
           <p className="font-['Outfit'] text-white/50 text-sm leading-relaxed max-w-sm lg:max-w-none">
@@ -138,7 +138,7 @@ export default function RoadmapSection() {
         <div
           className={`mb-16 lg:mb-20 transition-all duration-700 ${headingVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
         >
-          <span className="section-number text-[oklch(0.72_0.12_75)]">02  Journey</span>
+          <span className="section-number text-[oklch(0.72_0.12_75)]">02 · Journey</span>
           <h2
             className="font-['Cormorant_Garamond'] text-white mt-3 leading-tight"
             style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 400 }}

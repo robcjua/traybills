@@ -9,7 +9,7 @@ const tracks = [
   {
     number: "01",
     title: "New Flava",
-    description: "Latest single  smooth R&B vibes with Atlanta heat",
+    description: "Latest single · smooth R&B vibes with Atlanta heat",
     type: "Single",
     year: "2025",
     youtubeId: "cE-F7mc30KQ",
@@ -19,7 +19,7 @@ const tracks = [
   {
     number: "02",
     title: "Weather Man",
-    description: "Certified banger  bringing the forecast to the streets",
+    description: "Certified banger · bringing the forecast to the streets",
     type: "Single",
     year: "2023",
     youtubeId: "mzE3AC0teoI",
@@ -29,7 +29,7 @@ const tracks = [
   {
     number: "03",
     title: "We Wylin",
-    description: "Official music video  high energy summer anthem",
+    description: "Official music video · high energy summer anthem",
     type: "Official Video",
     year: "2022",
     youtubeId: "nuhchMbfubU",
@@ -49,7 +49,7 @@ const tracks = [
   {
     number: "05",
     title: "In My Bag",
-    description: "ft. Chris Gilly & Miita 6  The Leak EP",
+    description: "ft. Chris Gilly & Miita 6 · The Leak EP",
     type: "EP Track",
     year: "2020",
     youtubeId: "S0CmZNKL7CM",
@@ -59,7 +59,7 @@ const tracks = [
   {
     number: "06",
     title: "Flexin",
-    description: "From The Bills Way  anthem of the Billionaire Gang",
+    description: "From The Bills Way · anthem of the Billionaire Gang",
     type: "Album Track",
     year: "2019",
     youtubeId: "yptOxrDLPsY",
@@ -69,7 +69,7 @@ const tracks = [
   {
     number: "07",
     title: "Hot Topic ft. Richy Rolex",
-    description: "The collab that put him on the map  210K views",
+    description: "The collab that put him on the map · 210K views",
     type: "Feature",
     year: "2018",
     youtubeId: "Z_iToUzX5lw",
@@ -79,7 +79,7 @@ const tracks = [
   {
     number: "08",
     title: "Freestylin'",
-    description: "Pure bars  showcasing the lyrical side of Tray Bills",
+    description: "Pure bars · showcasing the lyrical side of Tray Bills",
     type: "Single",
     year: "2018",
     youtubeId: "3uo5sMz_yFU",
@@ -174,7 +174,7 @@ export default function MusicSection() {
             className={`mb-16 lg:mb-20 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
           >
             <div>
-              <span className="section-number">05  Music</span>
+              <span className="section-number">05 · Music</span>
               <h2
                 className="font-['Cormorant_Garamond'] text-foreground mt-3 leading-tight"
                 style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 400 }}
@@ -242,7 +242,7 @@ export default function MusicSection() {
                 </button>
 
                 <div className="flex-1 min-w-0">
-                  <div className="font-['Cormorant_Garamond'] text-foreground text-lg lg:text-xl font-500 leading-tight group-hover:text-[oklch(0.72_0.12_75)] transition-colors">
+                  <div className="font-['Cormorant_Garamond'] text-foreground text-lg lg:text-xl font-medium leading-tight group-hover:text-[oklch(0.72_0.12_75)] transition-colors">
                     {track.title}
                   </div>
                   <div className="font-['Outfit'] text-foreground/40 text-xs lg:text-sm mt-0.5 truncate">

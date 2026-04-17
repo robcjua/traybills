@@ -46,7 +46,7 @@ export default function ContactSection() {
           <div
             className={`transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"}`}
           >
-            <span className="section-number text-[oklch(0.72_0.12_75)]">04  Connect</span>
+            <span className="section-number text-[oklch(0.72_0.12_75)]">04 · Connect</span>
             <h2
               className="font-['Cormorant_Garamond'] text-white mt-3 mb-8 leading-tight"
               style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 400 }}
@@ -57,7 +57,7 @@ export default function ContactSection() {
             </h2>
 
             <p className="font-['Outfit'] text-white/50 text-sm leading-relaxed mb-10 max-w-sm">
-              For bookings, brand partnerships, collaborations, and press inquiries  reach out directly.
+              For bookings, brand partnerships, collaborations, and press inquiries, reach out directly.
             </p>
 
             <div className="space-y-4">
@@ -130,7 +130,7 @@ export default function ContactSection() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between py-4 border-b border-white/8 hover:border-[oklch(0.72_0.12_75)]/30 transition-all duration-300"
+                    className="group flex items-center justify-between py-4 border-b border-white/10 hover:border-[oklch(0.72_0.12_75)]/30 transition-all duration-300"
                     style={{ transitionDelay: `${index * 50}ms` }}
                   >
                     <div className="font-['Outfit'] text-white/50 text-sm group-hover:text-white transition-colors tracking-wide">
@@ -153,7 +153,7 @@ export default function ContactSection() {
               rel="noopener noreferrer"
               className="block w-full text-center font-['Outfit'] text-xs tracking-[0.2em] uppercase bg-[oklch(0.72_0.12_75)] text-white py-4 hover:bg-[oklch(0.65_0.12_75)] transition-colors mt-8"
             >
-              View All Links  Linktree
+              View All Links · Linktree
             </a>
           </div>
         </div>
