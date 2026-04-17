@@ -33,12 +33,6 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
 
       <div className="relative z-10 min-h-screen flex flex-col justify-end pb-20 lg:pb-28 px-6 lg:px-16 xl:px-24 max-w-7xl mx-auto">
-        <div className="mb-4 lg:mb-6">
-          <span className="font-['Outfit'] text-xs tracking-[0.3em] uppercase text-[oklch(0.72_0.12_75)] font-medium">
-            Atlanta, Georgia
-          </span>
-        </div>
-
         <h1
           className="font-['Cormorant_Garamond'] text-white leading-none mb-2"
           style={{ fontSize: "clamp(4rem, 12vw, 11rem)", fontWeight: 300 }}
