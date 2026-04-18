@@ -53,7 +53,7 @@ export default function ContactSection() {
             >
               Work With
               <br />
-              <em>Billy</em>
+              <em>Tray Bills</em>
             </h2>
 
             <p className="font-['Outfit'] text-white/50 text-sm leading-relaxed mb-10 max-w-sm">

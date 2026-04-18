@@ -52,7 +52,7 @@ export default function Navbar() {
             isGalleryPage || (isHome && !scrolled) ? "text-white" : "text-foreground"
           }`}
         >
-          BILLY
+          TRAY BILLS
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
