@@ -41,28 +41,30 @@ export default function AboutSection() {
 
             <div className="space-y-6 font-['Outfit'] text-foreground/70 leading-relaxed text-[15px] lg:text-base">
               <p>
-                Born in Atlanta, Georgia, Tray Bills, known to his fans as{" "}
-                <strong className="text-foreground font-medium">BILLY</strong>, grew up in a neighborhood
-                deeply shaped by hip-hop culture. The streets, the sounds, and the stories of Atlanta became
-                the foundation of everything he creates.
+                <strong className="text-foreground font-medium">Tray Bills</strong> is a recording artist,
+                entrepreneur, model, personality, and content creator from Atlanta, Georgia. He began his
+                professional career snapping photos and uploading to social media, where he quickly built a
+                devoted fan base by staying ahead of the trends.
               </p>
               <p>
-                After developing a passion for music in middle school, Tray took a bold step: he dropped out
-                of college to pursue his vision full-time. What started as YouTube content and SoundCloud
-                releases evolved into a multi-platform empire spanning music, fashion, and influence.
+                As his following and demand grew, brands lined up to partner with him, evolving Tray into
+                what's now widely called a "big influencer", able to move culture through his channels.
+                He's currently a brand ambassador for{" "}
+                <strong className="text-foreground font-medium">Fashion Nova</strong>, and his debut album{" "}
+                <em>The Bills Way</em>, featuring the hit "Flexin," dropped July 4, 2019.
               </p>
               <p>
-                Today, Tray leads the{" "}
-                <strong className="text-foreground font-medium">Billionaire Gang</strong>, a community of
-                over <strong className="text-foreground font-medium">2.5 million followers</strong> across
-                platforms who connect with his authentic storytelling about real friendship, devoted love,
-                and street romance. He's a NovaMEN brand ambassador, SXSW contributor, and one of Atlanta's
-                most compelling creative voices.
+                Now working on a new project with A-list producers and contributors, Tray is preparing to
+                front more fashion labels and host some of the hottest shows on television. His following,
+                affectionately called <strong className="text-foreground font-medium">"The Bills Way"</strong>,
+                spans <strong className="text-foreground font-medium">2.5M+ across platforms</strong> with{" "}
+                <strong className="text-foreground font-medium">800,000 daily followers</strong> tuning in
+                to his world.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-2 mt-10">
-              {["Music Artist", "Content Creator", "Fashion", "NovaMEN", "Billionaire Gang", "Atlanta"].map((tag) => (
+              {["Recording Artist", "Content Creator", "Entrepreneur", "Model", "Fashion Nova", "Billionaire Gang", "Atlanta"].map((tag) => (
                 <span
                   key={tag}
                   className="font-['Outfit'] text-[10px] tracking-[0.15em] uppercase border border-foreground/20 text-foreground/60 px-3 py-1.5 hover:border-[oklch(0.72_0.12_75)] hover:text-[oklch(0.72_0.12_75)] transition-colors cursor-default"

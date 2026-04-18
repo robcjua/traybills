@@ -7,16 +7,16 @@ const platforms = [
     handle: "@traybills",
     display: "1.5M",
     label: "Followers",
-    sublabel: "32M+ Likes",
+    sublabel: "10M views / 60 days",
     url: "https://www.tiktok.com/@traybills",
     color: "from-[#010101] to-[#69C9D0]",
   },
   {
     name: "Instagram",
     handle: "@traymfnbills",
-    display: "752K",
+    display: "753K",
     label: "Followers",
-    sublabel: "376+ Posts",
+    sublabel: "4.4M views / 90 days",
     url: "https://www.instagram.com/traymfnbills/",
     color: "from-[#833AB4] to-[#FD1D1D]",
   },
@@ -25,7 +25,7 @@ const platforms = [
     handle: "@TrayBillsTV",
     display: "384K",
     label: "Subscribers",
-    sublabel: "322+ Videos",
+    sublabel: "27.3M lifetime views",
     url: "https://www.youtube.com/@TrayBillsTV",
     color: "from-[#FF0000] to-[#CC0000]",
   },
@@ -120,7 +120,7 @@ export default function FollowingSection() {
             <em>Gang</em>
           </h2>
           <p className="font-['Outfit'] text-foreground/50 text-sm mt-4 max-w-md leading-relaxed">
-            A community of over 2.5 million across platforms, built on authentic content, real stories, and genuine connection.
+            A community of over 2.5 million across platforms, built on authentic content, real stories, and genuine connection. <strong className="text-foreground/70">100% organic. Zero paid ads.</strong>
           </p>
         </div>
 
