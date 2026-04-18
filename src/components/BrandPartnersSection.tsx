@@ -7,40 +7,65 @@ const featured = {
   note: "Official face of NovaMEN — global fashion partnership.",
 };
 
-const partnerBrands = [
-  "Nike",
-  "Monster Energy",
-  "Hulu",
-  "BLK",
-  "Walmart",
-  "TikTok",
-  "Amazon",
-  "Triller",
-  "AXE",
-  "NFL",
-  "NBA",
-  "Mayweather Boxing + Fitness",
-  "Facebook",
-  "SXSW",
+type Brand = { name: string; slug?: string };
+
+// slug = simple-icons slug (https://simpleicons.org). If omitted, render name as text.
+const partnerBrands: Brand[] = [
+  { name: "Nike", slug: "nike" },
+  { name: "Monster Energy", slug: "monsterenergy" },
+  { name: "Hulu", slug: "hulu" },
+  { name: "BLK" },
+  { name: "Walmart", slug: "walmart" },
+  { name: "TikTok", slug: "tiktok" },
+  { name: "Amazon", slug: "amazon" },
+  { name: "Triller" },
+  { name: "AXE" },
+  { name: "NFL", slug: "nfl" },
+  { name: "NBA", slug: "nba" },
+  { name: "Mayweather Boxing + Fitness" },
+  { name: "Facebook", slug: "facebook" },
+  { name: "SXSW" },
 ];
 
-const pressBrands = [
-  "The New York Times",
-  "CNN",
-  "Complex",
-  "Distractify",
-  "Refinery29",
-  "Cision PR Newswire",
-  "Fashion Gxd Magazine",
-  "DJ Smallz",
+const pressBrands: Brand[] = [
+  { name: "The New York Times", slug: "newyorktimes" },
+  { name: "CNN", slug: "cnn" },
+  { name: "Complex" },
+  { name: "Distractify" },
+  { name: "Refinery29" },
+  { name: "Cision PR Newswire" },
+  { name: "Fashion Gxd Magazine" },
+  { name: "DJ Smallz" },
 ];
+
+function BrandLogo({ brand }: { brand: Brand }) {
+  if (brand.slug) {
+    return (
+      <img
+        src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${brand.slug}.svg`}
+        alt={brand.name}
+        loading="lazy"
+        className="h-8 lg:h-10 w-auto max-w-[140px] object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
+        style={{
+          filter:
+            "brightness(0) invert(1) drop-shadow(0 0 0 transparent)",
+        }}
+      />
+    );
+  }
+  return (
+    <span className="font-['Cormorant_Garamond'] text-white/80 text-xl lg:text-2xl tracking-wide whitespace-nowrap group-hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300">
+      {brand.name}
+    </span>
+  );
+}
 
 function MarqueeRow({
   items,
   direction = "left",
   variant = "light",
 }: {
-  items: string[];
+  items: Brand[];
   direction?: "left" | "right";
   variant?: "light" | "dark";
 }) {
@@ -54,16 +79,14 @@ function MarqueeRow({
       >
         {doubled.map((brand, i) => (
           <div
-            key={`${brand}-${i}`}
-            className={`shrink-0 px-7 py-5 border transition-all duration-300 group cursor-default ${
+            key={`${brand.name}-${i}`}
+            className={`shrink-0 h-20 lg:h-24 min-w-[180px] lg:min-w-[200px] px-7 flex items-center justify-center border transition-all duration-300 group cursor-default ${
               variant === "light"
                 ? "border-white/10 bg-white/[0.02] hover:bg-white/[0.06] hover:border-[oklch(0.72_0.12_75)]/40"
                 : "border-white/5 bg-black/40 hover:bg-black/60 hover:border-[oklch(0.72_0.12_75)]/30"
             }`}
           >
-            <span className="font-['Cormorant_Garamond'] text-white/80 text-xl lg:text-2xl tracking-wide whitespace-nowrap group-hover:text-[oklch(0.72_0.12_75)] transition-colors duration-300">
-              {brand}
-            </span>
+            <BrandLogo brand={brand} />
           </div>
         ))}
       </div>
