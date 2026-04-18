@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import RoadmapSection from "@/components/RoadmapSection";
 import FollowingSection from "@/components/FollowingSection";
+import BrandPartnersSection from "@/components/BrandPartnersSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -30,6 +31,7 @@ function Home() {
       <AboutSection />
       <RoadmapSection />
       <FollowingSection />
+      <BrandPartnersSection />
       <ContactSection />
       <Footer />
     </div>
