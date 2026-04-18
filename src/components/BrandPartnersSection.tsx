@@ -12,18 +12,18 @@ type Brand = { name: string; slug?: string };
 // slug = simple-icons slug (https://simpleicons.org). If omitted, render name as text.
 const partnerBrands: Brand[] = [
   { name: "Nike", slug: "nike" },
-  { name: "Monster Energy", slug: "monsterenergy" },
+  { name: "Monster Energy", slug: "monster" },
   { name: "Hulu", slug: "hulu" },
-  { name: "BLK" },
   { name: "Walmart", slug: "walmart" },
   { name: "TikTok", slug: "tiktok" },
   { name: "Amazon", slug: "amazon" },
-  { name: "Triller" },
-  { name: "AXE" },
-  { name: "NFL", slug: "nfl" },
+  { name: "Triller", slug: "triller" },
   { name: "NBA", slug: "nba" },
-  { name: "Mayweather Boxing + Fitness" },
   { name: "Facebook", slug: "facebook" },
+  { name: "BLK" },
+  { name: "AXE" },
+  { name: "NFL" },
+  { name: "Mayweather Boxing + Fitness" },
   { name: "SXSW" },
 ];
 
