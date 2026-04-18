@@ -36,7 +36,7 @@ export default function AboutSection() {
             >
               The Story of
               <br />
-              <em>Big Billy</em>
+              <em>Tray Bills</em>
             </h2>
 
             <div className="space-y-6 font-['Outfit'] text-foreground/70 leading-relaxed text-[15px] lg:text-base">

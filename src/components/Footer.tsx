@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="bg-[#0a0a0a] border-t border-white/5 py-8">
       <div className="max-w-7xl mx-auto px-6 lg:px-16 xl:px-24 flex flex-col lg:flex-row items-center justify-between gap-4">
         <div className="font-['Cormorant_Garamond'] text-white/30 text-lg tracking-widest">
-          BILLY
+          TRAY BILLS
         </div>
 
         <div className="font-['Outfit'] text-white/20 text-xs tracking-[0.15em] text-center flex flex-col gap-1">
