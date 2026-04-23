@@ -120,7 +120,7 @@ export default function FollowingSection() {
             <em>Gang</em>
           </h2>
           <p className="font-['Outfit'] text-foreground/50 text-sm mt-4 max-w-md leading-relaxed">
-            A community of over 2.5 million across platforms, built on authentic content, real stories, and genuine connection. <strong className="text-foreground/70">100% organic. Zero paid ads.</strong>
+            A community of over 3 million across platforms, built on authentic content, real stories, and genuine connection. <strong className="text-foreground/70">100% organic. Zero paid ads.</strong>
           </p>
         </div>
 
@@ -141,7 +141,7 @@ export default function FollowingSection() {
           <div className="inline-flex items-center gap-4">
             <div className="w-16 h-px bg-foreground/20" />
             <span className="font-['Cormorant_Garamond'] text-2xl text-foreground/40 italic">
-              2.5M+ total reach
+              3M+ total reach
             </span>
             <div className="w-16 h-px bg-foreground/20" />
           </div>
