@@ -3,5 +3,11 @@
   "name": "traybills",
   "compatibility_date": "2025-09-24",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "@tanstack/react-start/server-entry",
+  // Point at the file the build actually produces. The previous value,
+  // "@tanstack/react-start/server-entry", is a virtual module the Vite plugin
+  // resolves at build time, so wrangler cannot find it on disk at deploy time.
+  "main": "dist/server/server.js",
+  "assets": {
+    "directory": "dist/client"
+  }
 }
